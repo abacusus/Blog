@@ -102,6 +102,7 @@ fetchBlog()
       <div id="main-nav" style={{ width: "100%",zIndex:5,position:"relative" }}>
         <div
           style={{
+            paddingTop: 16,
             height: 50,
             display: "flex",
             flexDirection: "row",
@@ -139,6 +140,7 @@ fetchBlog()
           <div
           onClick={()=>setVisible(true)}
             style={{
+              
               backgroundColor: "rgb(128, 164, 206)",
               display: "flex",
               alignItems: "center",
@@ -158,7 +160,7 @@ fetchBlog()
           </div>
         ) : (
           <img
-            style={{ height: 55, width: 55, borderRadius: "50%" }}
+            style={{ height: 50, width: 50, borderRadius: "50%" }}
             src={image}
           />
         )}

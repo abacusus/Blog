@@ -22,6 +22,7 @@ const Login = () => {
   const [ phoneNum , setPhoneNum] = useState('')
   const navigate = useNavigate()
   const dispatch = useDispatch()
+ 
   const handleRegister = async function(){
     console.log("reached")
     dispatch(addUser({
@@ -31,7 +32,7 @@ const Login = () => {
       password : password,
       phoneNum : phoneNum,
     }))
-    navigate('/addblog')
+    navigate('/home')
     const result = 
     await axios.post('http://localhost:3000/signup',{
       userName : userName,

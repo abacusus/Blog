@@ -1,8 +1,14 @@
 import React from 'react'
 import './Google.css'
+import { signInWithPopup } from 'firebase/auth'
+import { auth , provider } from './firebase'
+ const googleLogin = async () =>{
+    const response = await signInWithPopup(auth , provider)
+    console.log(response)
+  }
 const Google = () => {
   return (
-    <div style={{zIndex:3}}>
+    <div onClick={googleLogin}  style={{zIndex:3}}>
     <button className="gsi-material-button">
       <div className="gsi-material-button-state"></div>
       <div className="gsi-material-button-content-wrapper">
