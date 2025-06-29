@@ -2,11 +2,20 @@ import React from 'react'
 import './Google.css'
 import { signInWithPopup } from 'firebase/auth'
 import { auth , provider } from './firebase'
- const googleLogin = async () =>{
+import { useNavigate } from 'react-router-dom'
+ 
+const Google = () => {
+  const navigate = useNavigate()
+  const googleLogin = async () =>{
+
     const response = await signInWithPopup(auth , provider)
     console.log(response)
+    if(response.user.displayName){
+      navigate("/home");
+      
+    }
   }
-const Google = () => {
+
   return (
     <div onClick={googleLogin}  style={{zIndex:3}}>
     <button className="gsi-material-button">

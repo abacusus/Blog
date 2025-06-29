@@ -41,7 +41,7 @@ const Home = () => {
 
 
   
-  const genAI = new GoogleGenerativeAI("AIzaSyB2yDwBRM3qER4vkGNpHb4Y6yMFaeeVb1k");
+  const genAI = new GoogleGenerativeAI("AIzaSyANUqHkT9iewrPaWU96lyVXvkVmB3_1RQc");
   
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
@@ -72,7 +72,7 @@ async function run(prompt) {
   }
 useEffect(()=>{
 fetchBlog()
-// setBlogs(useSelector((state) => state.blogs.blogs);)
+// setBlogs(useSelector((state) => state.blogs.blogs);)f
 
 },[])
   console.log(blogs)
@@ -403,7 +403,9 @@ fetchBlog()
           return(
             <div 
             onMouseEnter={()=>{
-              const temp = blogs[index].blogData.map((element,index2)=>{
+              console.log(element)
+              const temp = element.blogData.map((element,index2)=>{
+
                   if(element.text)
                     return element;
                   else
