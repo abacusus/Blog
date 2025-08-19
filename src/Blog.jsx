@@ -28,33 +28,8 @@ const Blog = () => {
   return (
     <div style={{ backgroundColor: "#09344c", minHeight: "100vh", padding: "20px",overflowY:"scroll",height:800 }}>
       <h1 style={{ color: "white", fontFamily: "roboto", textAlign: "center" }}>My Blogs</h1>
-      {
-        myBlogs.map((item, index)=>{
-          return (
-            <div>
-              <h1 style={{color:"white",fontFamily:"roboto"}}>{item.title}</h1>
-              {  
-                 item.blogData.map((blog,index2)=>{
-              if(blog.text || blog.text===""){
-                return(
-                  <p style={{ color:"white",fontFamily:"roboto"}}>{
-                  blog.text
-                }</p>
-                )
-              }
-              else{
-                return <img style={{height:200,width:200}} src={blog.image}>
-                </img>
-                
-              }
-              })
-              }
-            </div>
-           
-          )
-        })
-      }
-      {/* {myBlogs.length === 0 ? (
+    
+      {myBlogs.length === 0 ? (
         <p style={{ color: "white", textAlign: "center", fontFamily: "roboto" }}>
           You haven’t written any blogs yet.
         </p>
@@ -92,7 +67,7 @@ const Blog = () => {
             </div>
           </div>
         ))
-      )} */}
+      )}
     </div>
   );
 };

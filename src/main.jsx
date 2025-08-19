@@ -18,6 +18,7 @@ import Condition from "./Condition.jsx"
 import Privacy from "./Privacy.jsx"
 import Contact from "./Contact.jsx"
 import Blog from './Blog.jsx';
+import Show from './show.jsx'
 
 createRoot(document.getElementById('root')).render(
   
@@ -38,6 +39,7 @@ createRoot(document.getElementById('root')).render(
     <Route path='/contact'element={<Contact/>}/>
     <Route path='/condition'element={<Condition/>}/>
     <Route path='/blog'element={<Blog/>}/>
+    <Route path = '/show' element={<Show/>}/>
 
 
 

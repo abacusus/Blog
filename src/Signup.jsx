@@ -22,19 +22,27 @@ if(password && password.length<6)setPassError("Password length must be greater t
   else setPassError(false)
     },[password])
     const handleSubmit = async function() {
-      const result =
+      try{
+        const result =
       await axios.post('http://localhost:3000/login',
         {
         email : email,
       password : password,
         })
+   
+
         console.log(result)
-        if(result.data==='success')
+        if(result.data.success)
         {   dispatch(addUser(email))
+         localStorage.setItem('token', result.data.token); // store token
             localStorage.setItem("email",email)
             toast.success('Login Successful')
-          Navigate('/addblog')
+          Navigate('/home')
         }
+              }
+       catch (err) {
+    console.error(err);
+  }
     }
   return (
     <div id='main-conatiner' style={{
